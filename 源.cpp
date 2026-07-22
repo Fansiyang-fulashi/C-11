@@ -111,5 +111,17 @@ int main()
 
 	//右值引用与移动语义
 	std::cout<<ooo.s("11", "22")<<std::endl;
+
+	//万能引用
+    /*template<class T>
+	class AAA
+	{
+		void F(T&& t)
+		{
+			;
+		}
+	};*/
+
+
 	return 0;
 }
