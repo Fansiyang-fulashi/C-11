@@ -49,6 +49,24 @@ struct str
 	std::string _a;
 };
 
+void showlist()
+{
+	std::cout << std::endl;
+}
+
+template<class T,class... Args>
+void showlist(T x, Args&& ...args)
+{
+	std::cout << x << " ";
+	showlist(args...);//递归调用
+}
+
+template<class... Args>//可变模板参数
+void printf1(Args&&... args)
+{
+	showlist(args...);
+}
+
 int main()
 {
 	//列表初始化
@@ -122,6 +140,9 @@ int main()
 		}
 	};*/
 
+	//可变模板参数的使用
+	printf1();
+	printf1(1, 1, 1,1.2,std::string("1111"));
 
 	return 0;
 }
