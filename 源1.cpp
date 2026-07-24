@@ -28,5 +28,20 @@ int main()
 	{
 		std::cout << it.first << std::endl;
 	}
+
+	//lambda表达式--捕捉列表
+	int a = 0;
+	int b = 1;
+	auto F = [a, &b] {
+		return a + (b++); 
+		};
+	std::cout << F() << std::endl;
+	std::cout << F() << std::endl;
+	auto F1 = [&] {
+		return (++a) + (b++);
+		};
+	std::cout << F1() << std::endl;
+
+	//逆波兰表达式
 	return 0;
 }
