@@ -5,6 +5,7 @@
 #include<assert.h>
 #include<vector>
 #include<algorithm>
+#include<functional>
 
 namespace all
 {

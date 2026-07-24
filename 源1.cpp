@@ -1,5 +1,31 @@
 ﻿#include"list.h"
 
+struct hhh
+{
+	hhh()
+		:_n(10)
+	{ }
+
+	static int iii(int a, int b)
+	{
+		return a + b;
+	}
+
+	int ooo(double a, double b)
+	{
+		return a + b;
+	}
+	int _n = 10;
+};
+
+int kkk(int a, int b)
+{
+	return a - b;
+}
+using std::placeholders::_1;
+using std::placeholders::_2;
+using std::placeholders::_3;
+
 int main()
 {
 	/*all::list<int> l;	
@@ -42,6 +68,16 @@ int main()
 		};
 	std::cout << F1() << std::endl;
 
+	//包装器
+	std::function<int(int, int)> ddd = [](int a, int b){return a + b; };
+	std::function<int(int, int)> bbb = hhh::iii;
+	std::function<int(hhh, int, int)> ccc = &hhh::ooo;
+	std::cout << ccc(hhh(), 100, 1) << std::endl;
+
 	//逆波兰表达式
+
+	//bind
+	auto sub1 = std::bind(kkk, _2, _1);
+	std::cout<<sub1(10, 2)<<std::endl;
 	return 0;
 }
