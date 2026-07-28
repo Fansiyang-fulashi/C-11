@@ -79,5 +79,7 @@ int main()
 	//bind
 	auto sub1 = std::bind(kkk, _2, _1);
 	std::cout<<sub1(10, 2)<<std::endl;
+	std::function<int(int, int)> ppp = std::bind(&hhh::ooo, hhh(), _1, _2);
+	std::cout<<ppp(1, 2);
 	return 0;
 }
